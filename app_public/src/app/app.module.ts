@@ -12,6 +12,9 @@ import { FrameworkComponent } from './framework/framework.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { NewsComponent } from './news/news.component';
+import { PitchesComponent } from './pitches/pitches.component';
+import { SummaryComponent } from './summary/summary.component';
+import { ListComponent } from './list/list.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { NewsComponent } from './news/news.component';
     FrameworkComponent,
     HomepageComponent,
     SearchBarComponent,
-    NewsComponent
+    NewsComponent,
+    PitchesComponent,
+    SummaryComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

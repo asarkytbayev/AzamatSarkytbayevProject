@@ -15,3 +15,6 @@ Notes:
 * Created components - framework (ng generate component componentName)
 * Homepage component = { Search-Bar & News subcomponents }
 * Created routing module (ng generate module app-routing) and established routing
+* Added bootstrap & JQuery libraries
+* Created a simple navbar using a bootstrap example
+* Pitches component = { Summary and List subcomponents }

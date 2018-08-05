@@ -6,12 +6,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 /** import components for routes */
 import { HomepageComponent } from '../homepage/homepage.component';
+import { PitchesComponent } from '../pitches/pitches.component';
 
 /** routes as an array of Routes */
 const routes: Routes = [
   {
     path: '',
     component: HomepageComponent
+  },
+  {
+    path: 'pitches',
+    component: PitchesComponent
   }
 ];
 
