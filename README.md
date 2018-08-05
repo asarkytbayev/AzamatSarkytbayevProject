@@ -11,3 +11,7 @@ Notes:
 * Pushed the app to Heroku (heroku create)
 * Created default Angular app in app_public folder (ng new hoope-public --sg --st --dir app_public)
 * Added routing for Express to serve app_public/build folder statically (ng build -prod -op build)
+* Added stylesheets - Bootstrap & FontAwesome
+* Created components - framework (ng generate component componentName)
+* Homepage component = { Search-Bar & News subcomponents }
+* Created routing module (ng generate module app-routing) and established routing
