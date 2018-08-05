@@ -18,3 +18,5 @@ Notes:
 * Added bootstrap & JQuery libraries
 * Created a simple navbar using a bootstrap example
 * Pitches component = { Summary and List subcomponents }
+* Details-Page component = { Summary and Pitch-Details and Interested subcomponents }
+* About component

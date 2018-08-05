@@ -15,6 +15,10 @@ import { NewsComponent } from './news/news.component';
 import { PitchesComponent } from './pitches/pitches.component';
 import { SummaryComponent } from './summary/summary.component';
 import { ListComponent } from './list/list.component';
+import { DetailsPageComponent } from './details-page/details-page.component';
+import { PitchDetailsComponent } from './pitch-details/pitch-details.component';
+import { InterestedComponent } from './interested/interested.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -26,7 +30,11 @@ import { ListComponent } from './list/list.component';
     NewsComponent,
     PitchesComponent,
     SummaryComponent,
-    ListComponent
+    ListComponent,
+    DetailsPageComponent,
+    PitchDetailsComponent,
+    InterestedComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

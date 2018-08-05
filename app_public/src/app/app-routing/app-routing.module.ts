@@ -7,6 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 /** import components for routes */
 import { HomepageComponent } from '../homepage/homepage.component';
 import { PitchesComponent } from '../pitches/pitches.component';
+import { DetailsPageComponent } from '../details-page/details-page.component';
+import { AboutComponent } from '../about/about.component';
 
 /** routes as an array of Routes */
 const routes: Routes = [
@@ -17,6 +19,14 @@ const routes: Routes = [
   {
     path: 'pitches',
     component: PitchesComponent
+  },
+  {
+    path: 'pitches/:pitchId',
+    component: DetailsPageComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   }
 ];
 
