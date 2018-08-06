@@ -19,4 +19,5 @@ Notes:
 * Created a simple navbar using a bootstrap example
 * Pitches component = { Summary and List subcomponents }
 * Details-Page component = { Summary and Pitch-Details and Interested subcomponents }
-* About component
+* About component added
+* Player-Profile component = { Player-Data subcomponent }
