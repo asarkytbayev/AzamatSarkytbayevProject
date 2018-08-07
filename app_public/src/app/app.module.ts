@@ -25,7 +25,6 @@ import { PlayerDataComponent } from './player-data/player-data.component';
 
 @NgModule({
   declarations: [
-    // AppComponent,
     FrameworkComponent,
     HomepageComponent,
     SearchBarComponent,
@@ -43,6 +42,7 @@ import { PlayerDataComponent } from './player-data/player-data.component';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

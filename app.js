@@ -30,14 +30,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // server app_public folder as a static folder
 app.use(express.static(path.join(__dirname, 'app_public', 'build')));
-
-// serve anything that wasn't matched with regular expressions
-app.use('/(\/about)|(\/pitches\/[a-z0-9]{24})/', function(req, res, next) {
-  res.sendFile(path.join(__dirname, 'app_public', 'build', 'index.html'));
-});
+// app.use(express.static(path.join(__dirname, 'app_public')));
 
 app.use('/api', apiRouter);
 
+// serve anything that wasn't matched with regular expressions
+// app.get(/(\/about)|(\/pitches\/[a-z0-9]{24})|(\/players\/[a-z0-9]{24})/, function(req, res, next) {
+//   res.sendFile(path.join(__dirname, 'app_public', 'build', 'index.html'));
+// })
+app.get('*', function(req, res, next) {
+  res.sendFile(path.join(__dirname, 'app_public', 'build', 'index.html'));
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
