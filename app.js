@@ -32,7 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_public', 'build')));
 
 // serve anything that wasn't matched with regular expressions
-// app.use('/(\/about)|')
+app.use('/(\/about)|(\/pitches\/[a-z0-9]{24})/', function(req, res, next) {
+  res.sendFile(path.join(__dirname, 'app_public', 'build', 'index.html'));
+});
 
 app.use('/api', apiRouter);
 

@@ -23,3 +23,9 @@ Notes:
 * Player-Profile component = { Player-Data subcomponent }
 * Starting working on API: Pitches and Player models
 * Extra feature selected - user authentication:  https://www.sitepoint.com/user-authentication-mean-stack/
+
+![iter1](/readme_images/iter1_0.jpg)
+![iter1](/readme_images/iter1_1.jpg)
+![iter1](/readme_images/iter1_2.jpg)
+![iter1](/readme_images/iter1_3.jpg)
+![iter1](/readme_images/iter1_4.jpg)

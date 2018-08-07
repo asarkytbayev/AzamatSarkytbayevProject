@@ -259,8 +259,7 @@ const pitchesDeleteOne = function(req, res) {
 			.status(404)
 			.json({
 				"message": "No pitchId"
-            }
-        );
+			});
 	}
 };
 
