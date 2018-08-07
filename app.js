@@ -4,8 +4,14 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+/** brings in db - takes a while to process connection */
+require('./app_api/models/db');
+
+
 // const indexRouter = require('./routes/index');
 // const usersRouter = require('./routes/users');
+
+const apiRouter = require('./app_api/routes/index');
 
 const app = express();
 
@@ -27,6 +33,8 @@ app.use(express.static(path.join(__dirname, 'app_public', 'build')));
 
 // serve anything that wasn't matched with regular expressions
 // app.use('/(\/about)|')
+
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -21,3 +21,5 @@ Notes:
 * Details-Page component = { Summary and Pitch-Details and Interested subcomponents }
 * About component added
 * Player-Profile component = { Player-Data subcomponent }
+* Starting working on API: Pitches and Player models
+* Extra feature selected - user authentication:  https://www.sitepoint.com/user-authentication-mean-stack/
