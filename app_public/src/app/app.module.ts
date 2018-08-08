@@ -21,6 +21,8 @@ import { InterestedComponent } from './interested/interested.component';
 import { AboutComponent } from './about/about.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
 import { PlayerDataComponent } from './player-data/player-data.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { PlayerDataComponent } from './player-data/player-data.component';
     InterestedComponent,
     AboutComponent,
     PlayerProfileComponent,
-    PlayerDataComponent
+    PlayerDataComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ import { PitchesComponent } from '../pitches/pitches.component';
 import { DetailsPageComponent } from '../details-page/details-page.component';
 import { AboutComponent } from '../about/about.component';
 import { PlayerProfileComponent } from '../player-profile/player-profile.component';
+import { RegisterComponent } from '../register/register.component';
+import { LoginComponent } from '../login/login.component';
 
 /** routes as an array of Routes */
 const routes: Routes = [
@@ -32,6 +34,14 @@ const routes: Routes = [
   {
     path: 'players/:playerId',
     component: PlayerProfileComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
