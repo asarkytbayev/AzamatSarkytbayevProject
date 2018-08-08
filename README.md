@@ -1,6 +1,19 @@
 # AzamatSarkytbayevProject
 Personal project for CS5610 Web Development class
 
+# <a name="iter2"></a>Iteration 2: 
+
+link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
+
+Notes:
+
+* Added API authorization logic:
+    * /api/register (POST) & /api/login (POST) & /api/profile/userid (GET) - index.js
+    * setPassword, checkPassword & generateJwt to player schema
+    * set up passport node module to handle authentication npm install passport --save / npm install passport-local --save
+    * configured controllers s.t. only authenticated users can access /api/profile
+    * npm install express-jwt --save - to use JSON Web Token for maintaining the session state
+
 # <a name="iter1"></a>Iteration 1: Front + Back Ends Working. Angular Components Created. Routing, Links, CRUD Schema Established. 3rd Party Libraries/Boilerplates Selected.
 
 link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
