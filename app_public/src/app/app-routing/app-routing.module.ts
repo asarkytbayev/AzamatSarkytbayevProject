@@ -12,6 +12,8 @@ import { AboutComponent } from '../about/about.component';
 import { PlayerProfileComponent } from '../player-profile/player-profile.component';
 import { RegisterComponent } from '../register/register.component';
 import { LoginComponent } from '../login/login.component';
+import { ProfileComponent } from '../profile/profile.component';
+import { AuthGuardService } from '../auth-guard.service';
 
 /** routes as an array of Routes */
 const routes: Routes = [
@@ -44,7 +46,9 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-  
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuardService]
   }
 ];
 
