@@ -4,6 +4,9 @@
     <p class="lead">Already a member? Please <a routerLink="/login">log in</a> instead
     </p>
     <form (ngSubmit)="register()">
+      <div *ngIf="formError" class="alert alert-danger" role="alert">
+        {{ formError }}
+      </div>
       <div class="form-group">
         <label for="name">Full name</label>
         <input type="text" class="form-control" name="name" placeholder="Enter your name" [(ngModel)]="credentials.name">
