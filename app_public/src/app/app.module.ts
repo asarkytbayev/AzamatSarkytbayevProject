@@ -23,6 +23,7 @@ import { PlayerProfileComponent } from './player-profile/player-profile.componen
 import { PlayerDataComponent } from './player-data/player-data.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { LoginComponent } from './login/login.component';
     PlayerProfileComponent,
     PlayerDataComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

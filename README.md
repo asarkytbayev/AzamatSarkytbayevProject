@@ -17,7 +17,9 @@ Notes:
 * Applied authentication to Angular:
     * Created registration component which has a submit form: ng generate component register
     * Created a login component which has a submit form
+    * Created profile component which only logged in users can see
     * Changed content based on user status - logged in or loggen out
+    * Created authentication service: ng generate service authentication
     * Created a service to protect the path for logged in users: ng generate service auth-guard
     * Add canActivate property to routes
 
