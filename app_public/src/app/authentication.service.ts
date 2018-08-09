@@ -26,7 +26,7 @@ export interface TokenPayload {
 export class AuthenticationService {
 
   // private apiBaseUrl = 'http://localhost:3000';
-  private apiBaseUrl: string = 'mongodb://heroku_hjq58h2d:662aj5etjcu9tjg87vhkumrkv4@ds119476.mlab.com:19476/heroku_hjq58h2d';
+  private apiBaseUrl: string = 'https://cryptic-waters-21711.herokuapp.com';
 
   private token: string;
 
