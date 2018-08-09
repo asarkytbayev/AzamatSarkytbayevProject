@@ -5,12 +5,13 @@ const ctrlPitches  = require('../controllers/pitches');
 const ctrlReviews = require('../controllers/reviews');
 const ctrlPlayers = require('../controllers/players');
 const ctrlAuth = require('../controllers/authentication');
-
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config({path: '../../.env'});
-}
-
+const ctrlProfile = require('../controllers/profile');
 const jwt = require('express-jwt');
+
+// if (process.env.NODE_ENV !== 'production') {
+//     require('dotenv').config({path: '../../.env'});
+// }
+
 const auth = jwt({
     // TODO: SET AN ENVIRONMENT VARIABLE
     secret: process.env.MY_SECRET,
@@ -53,9 +54,9 @@ router
 /**
  * Handles routing for registering
  */
-router
-    .route('/register')
-    .post(ctrlPlayers.playersCreate);
+// router
+//     .route('/register')
+//     .post(ctrlPlayers.playersCreate);
 
 /**
  * Handles routing for reading, updating and deleting a player
@@ -78,7 +79,7 @@ router
     .post(ctrlAuth.login);
 
 router
-    route('/profile')
+    .route('/profile')
     .get(auth, ctrlProfile.profileRead);
 
 module.exports = router;

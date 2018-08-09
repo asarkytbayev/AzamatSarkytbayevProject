@@ -24,6 +24,9 @@ export interface TokenPayload {
 
 @Injectable()
 export class AuthenticationService {
+
+  private apiBaseUrl = 'http://localhost:3000';
+
   private token: string;
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -65,7 +68,7 @@ export class AuthenticationService {
     let base;
 
     if (method === 'post') {
-      base = this.http.post(`/api/${type}`, user);
+      base = this.http.post(`${this.apiBaseUrl}/api/${type}`, user);
     } else {
       base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }

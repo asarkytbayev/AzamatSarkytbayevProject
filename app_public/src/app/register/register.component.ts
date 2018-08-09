@@ -63,6 +63,7 @@ export class RegisterComponent implements OnInit {
     }
     else {
       this.formError = 'All fields required, please try again';
+      this.resetAndHideReviewForm();
     }
   }
 

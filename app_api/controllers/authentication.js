@@ -1,27 +1,28 @@
 const passport = require('passport');
 const mongoose = require('mongoose');
-const Player = mongoose.model('Player');
+const User = mongoose.model('User');
 
 /**
- * Registers the player
+ * Registers the user
  * 
  * @param {Object} req HTTP request object
  * @param {Object} res HTTP response object
  */
 const register = function(req, res) {
-    let player = new Player();
+    let user = new User();
 
-    player.name = req.body.name;
-    player.dob = req.body.dob;
-    player.height = req.body.height;
-    player.position = req.body.position;
-    player.attack = req.body.attack;
-    player.defense = req.body.defense;
-    player.passing = req.body.passing;
+    user.name = req.body.name;
+    user.email = req.body.email;
+    // user.dob = req.body.dob;
+    // user.height = req.body.height;
+    // user.position = req.body.position;
+    // user.attack = req.body.attack;
+    // user.defense = req.body.defense;
+    // user.passing = req.body.passing;
 
-    player.setPassword(req.body.password);
+    user.setPassword(req.body.password);
 
-    player.save(function(err) {
+    user.save(function(err) {
         if (err) {
             res
                 .status(400)
@@ -36,7 +37,7 @@ const register = function(req, res) {
                 "token": token
             });
     });
-}
+};
 
 /**
  * Handles the login
@@ -46,7 +47,7 @@ const register = function(req, res) {
  */
 const login = function(req, res) {
     // IIFE - immediately invoked function expression
-    passport.authenticate('local', function(err, player, info) {
+    passport.authenticate('local', function(err, user, info) {
         // if passport throws error
         if (err) {
             res
@@ -56,8 +57,8 @@ const login = function(req, res) {
         }
         let token;
         // if user is found
-        if (player) {
-            token = player.generateJwt();
+        if (user) {
+            token = user.generateJwt();
             res
                 .status(200)
                 .json({

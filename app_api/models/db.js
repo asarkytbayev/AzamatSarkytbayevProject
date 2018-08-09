@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 let dbURI = 'mongodb://localhost/Hoope';
+
 if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGODB_URI;
 }
@@ -87,3 +88,4 @@ process.on('SIGTERM', () => {
 
 require('./pitches');
 require('./players');
+require('./users');

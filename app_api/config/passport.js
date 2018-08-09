@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
-const Player = mongoose.model('Player');
+const User = mongoose.model('User');
 
 /**
  * Use Node module that simplifies the process of handling authentication
@@ -11,24 +11,24 @@ passport.use(new LocalStrategy({
         usernameField: 'email'
     },
     function(username, password, done) {
-        Player.findOne({ email: username}, function(err, player) {
+        User.findOne({ email: username}, function(err, user) {
             if (err) {
                 return done(err);
             }
             // return if user isn't found in the db
-            if (!player) {
+            if (!user) {
                 return done(null, false, {
-                    message: 'Player not found'
+                    message: 'User not found'
                 });
             }
             // return if password is wrong
-            if (!player.validPassword(password)) {
+            if (!user.validPassword(password)) {
                 return done(null, false, {
                     message: 'Password is wrong'
                 });
             }
             // if credentials are correct - return user object
-            return done(null, player);
+            return done(null, user);
         });
     }
 ));
