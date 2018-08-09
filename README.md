@@ -1,7 +1,7 @@
 # AzamatSarkytbayevProject
 Personal project for CS5610 Web Development class
 
-# <a name="iter2"></a>Iteration 2: 
+# <a name="iter2"></a>Iteration 2: Developing CRUD. GET & POST. Not Broken! Incomplete functionality - only user registration and login/logout functionalities are implemented.
 
 link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
 
@@ -25,6 +25,11 @@ Notes:
 * Pushing DB live: heroku addons:create mongolab & heroku addons:open mongolab & heroku config:get MONGODB_URI
 * Set heroku to be in production mode: heroku config:set NODE_ENV=production & heroku config:get NODE_ENV
 * Set heroku's MY_SECRET environment variable for JWT
+
+![iter2](/readme_images/iter2_0.jpg)
+![iter2](/readme_images/iter2_1.jpg)
+![iter2](/readme_images/iter2_2.jpg)
+![iter2](/readme_images/iter2_3.jpg)
 
 # <a name="iter1"></a>Iteration 1: Front + Back Ends Working. Angular Components Created. Routing, Links, CRUD Schema Established. 3rd Party Libraries/Boilerplates Selected.
 
