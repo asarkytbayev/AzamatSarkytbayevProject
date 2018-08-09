@@ -25,7 +25,8 @@ export interface TokenPayload {
 @Injectable()
 export class AuthenticationService {
 
-  private apiBaseUrl = 'http://localhost:3000';
+  // private apiBaseUrl = 'http://localhost:3000';
+  private apiBaseUrl: string = 'mongodb://heroku_hjq58h2d:662aj5etjcu9tjg87vhkumrkv4@ds119476.mlab.com:19476/heroku_hjq58h2d';
 
   private token: string;
 
@@ -70,7 +71,7 @@ export class AuthenticationService {
     if (method === 'post') {
       base = this.http.post(`${this.apiBaseUrl}/api/${type}`, user);
     } else {
-      base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+      base = this.http.get(`${this.apiBaseUrl}/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
 
     const request = base.pipe(

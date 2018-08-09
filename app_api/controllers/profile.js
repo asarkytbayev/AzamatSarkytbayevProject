@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const Player = mongoose.model('User');
+const User = mongoose.model('User');
 
 /**
- * Returns the player profile information
+ * Returns the user profile information
  * 
  * @param {Object} req HTTP request object
  * @param {Object} res HTTP response object
@@ -15,7 +15,7 @@ const profileRead = function(req, res) {
           "message": "UnauthorizedError: private profile"
       });
   } else {
-    Player
+    User
       .findById(req.payload._id)
       .exec(function(err, user) {
         if (err) {

@@ -22,6 +22,9 @@ Notes:
     * Created authentication service: ng generate service authentication
     * Created a service to protect the path for logged in users: ng generate service auth-guard
     * Add canActivate property to routes
+* Pushing DB live: heroku addons:create mongolab & heroku addons:open mongolab & heroku config:get MONGODB_URI
+* Set heroku to be in production mode: heroku config:set NODE_ENV=production & heroku config:get NODE_ENV
+* Set heroku's MY_SECRET environment variable for JWT
 
 # <a name="iter1"></a>Iteration 1: Front + Back Ends Working. Angular Components Created. Routing, Links, CRUD Schema Established. 3rd Party Libraries/Boilerplates Selected.
 
