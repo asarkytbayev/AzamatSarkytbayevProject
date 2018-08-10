@@ -2,3 +2,16 @@
 <p>
   list works!
 </p>
+<div *ngFor="let pitch of pitches">
+  <div>
+    Pitch name:
+    <a routerLink="/pitches/{{pitch._id}}"> {{ pitch.name }}</a>
+    <div>Rating: {{ pitch.rating }}</div>
+    <div>Distance: {{ pitch.distance | distance }}</div>
+    <div>Address: {{ pitch.address }}</div>
+    Facilities: 
+    <span *ngFor="let facility of pitch.facilities">
+      {{ facility }}
+    </span>
+  </div>
+</div>

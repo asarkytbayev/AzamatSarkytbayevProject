@@ -27,6 +27,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
+import { DistancePipe } from './distance.pipe';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { AuthGuardService } from './auth-guard.service';
     PlayerDataComponent,
     RegisterComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    DistancePipe
   ],
   imports: [
     BrowserModule,
