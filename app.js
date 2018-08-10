@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 
 
 if (process.env.NODE_ENV !== 'production') {
@@ -30,8 +31,10 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 /** initialize passport before using the route middleware */
 app.use(passport.initialize());
@@ -40,7 +43,7 @@ app.use(passport.initialize());
 // app.use('/users', usersRouter);
 
 // server app_public folder as a static folder
-app.use(express.static(path.join(__dirname, 'app_public', 'build')));
+// app.use(express.static(path.join(__dirname, 'app_public', 'build')));
 // app.use(express.static(path.join(__dirname, 'app_public')));
 
 // allowing cross-origin requests
@@ -56,9 +59,9 @@ app.use('/api', apiRouter);
 // app.get(/(\/about)|(\/pitches\/[a-z0-9]{24})|(\/players\/[a-z0-9]{24})/, function(req, res, next) {
 //   res.sendFile(path.join(__dirname, 'app_public', 'build', 'index.html'));
 // })
-app.get('*', function(req, res, next) {
-  res.sendFile(path.join(__dirname, 'app_public', 'build', 'index.html'));
-});
+// app.get('*', function(req, res, next) {
+//   res.sendFile(path.join(__dirname, 'app_public', 'build', 'index.html'));
+// });
 
 // catches unauthorized errors
 app.use(function(err, req, res, next) {

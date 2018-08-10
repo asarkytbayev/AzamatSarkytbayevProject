@@ -54,10 +54,13 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/profile');
       }, (err) => {
         console.error(err);
+        this.formError = "User not found"
+        this.resetAndHideReviewForm();
       }); 
     }
     else {
       this.formError = 'All fields required, please try again';
+      this.resetAndHideReviewForm();
     }
   }
 

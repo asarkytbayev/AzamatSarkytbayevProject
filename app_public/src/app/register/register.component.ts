@@ -59,6 +59,8 @@ export class RegisterComponent implements OnInit {
         this.router.navigateByUrl('/profile');
       }, (err) => {
         console.error(err);
+        this.formError = "The email address is already registered";
+        this.resetAndHideReviewForm();
       });
     }
     else {

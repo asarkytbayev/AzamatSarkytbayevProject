@@ -1,6 +1,15 @@
 # AzamatSarkytbayevProject
 Personal project for CS5610 Web Development class
 
+# <a name="iter3"></a>Iteration 3: Application is done!
+
+link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
+
+Notes:
+
+* Added error handling logic - previously registered email & clear the form
+* Set up Angular environment variables - development & production modes
+
 # <a name="iter2"></a>Iteration 2: Developing CRUD. GET & POST. Not Broken! Incomplete functionality - only user registration and login/logout functionalities are implemented.
 
 link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!

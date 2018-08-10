@@ -5,6 +5,7 @@ let dbURI = 'mongodb://localhost/Hoope';
 if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGODB_URI;
 }
+console.log(dbURI);
 
 mongoose.connect(dbURI, {
     useMongoClient: true

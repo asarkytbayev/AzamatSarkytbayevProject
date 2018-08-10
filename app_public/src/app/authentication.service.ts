@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators/map';
 import { Router } from '@angular/router';
+import { environment } from '../environments/environment';
 
 export interface UserDetails {
   _id: string;
@@ -25,8 +26,13 @@ export interface TokenPayload {
 @Injectable()
 export class AuthenticationService {
 
+  // private apiBaseUrl: string = environment.apiUrl;
+
   // private apiBaseUrl = 'http://localhost:3000';
-  private apiBaseUrl: string = 'https://cryptic-waters-21711.herokuapp.com';
+  // private apiBaseUrl: string = 'https://cryptic-waters-21711.herokuapp.com';
+  // if (environment.envName === 'dev') {
+    // this.apiBaseUrl = environment.apiUrl;
+  // }
 
   private token: string;
 
@@ -69,9 +75,11 @@ export class AuthenticationService {
     let base;
 
     if (method === 'post') {
-      base = this.http.post(`${this.apiBaseUrl}/api/${type}`, user);
+      // base = this.http.post(`${this.apiBaseUrl}/api/${type}`, user);
+      base = this.http.post(`/api/${type}`, user);
     } else {
-      base = this.http.get(`${this.apiBaseUrl}/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+      // base = this.http.get(`${this.apiBaseUrl}/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+      base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
 
     const request = base.pipe(
