@@ -61,6 +61,7 @@ const pitchesListByDistance = function(req, res) {
 	// converts from string to numbers
 	const lng = parseFloat(req.query.lng);
 	const lat = parseFloat(req.query.lat);
+	let maxD = parseFloat(req.query.maxDistance);
 
 	// error checking
 	// if (!lng || !lat) {
@@ -73,6 +74,10 @@ const pitchesListByDistance = function(req, res) {
 		return;
 	}
 
+	if ((!maxD && maxD !== 0)) {
+		maxD = 63710000;
+	}
+
 	// geoJSON point - JSON object containing latitude and longitude in an array
 	const point = {
 		type: "Point",
@@ -82,7 +87,7 @@ const pitchesListByDistance = function(req, res) {
 	// creating options
 	const geoOptions = {
 		spherical: true,
-		maxDistance: 20000, // in metres
+		maxDistance: maxD, // in metres
 		num: 10 // limit number of results returned
 	};
 

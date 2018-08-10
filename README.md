@@ -9,6 +9,10 @@ Notes:
 
 * Added error handling logic - previously registered email & clear the form
 * Set up Angular environment variables - development & production modes
+* Changed configuration for local development
+* Created pitch class: ng generate class pitch
+* Create service to get the pitch data: ng generate service pitch-data
+* Created service to get user's location: ng generate service geolocation
 
 # <a name="iter2"></a>Iteration 2: Developing CRUD. GET & POST. Not Broken! Incomplete functionality - only user registration and login/logout functionalities are implemented.
 
