@@ -30,11 +30,27 @@ export class PitchDetailsComponent implements OnInit {
   /** state of reviews */
   public reviewsVisible: boolean = false;
 
+  /** display Show/Hide reviews */
+  public reviewsStateString: string = 'Show reviews';
+
   /** state of review form */
   public formVisible: boolean = false;
 
   /** error message */
   public formError: string;
+
+  /**
+   * Shows and hides the reviews
+   */
+  public showHideReviews(): void {
+    this.reviewsVisible = !this.reviewsVisible;
+    if (this.reviewsVisible) {
+      this.reviewsStateString = 'Hide reviews';
+    }
+    else {
+      this.reviewsStateString = 'Show reviews';
+    }
+  }
 
   /**
    * Validates the form
