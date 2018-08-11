@@ -74,7 +74,7 @@ const _doAddReview = function(req, res, pitch) {
       } else {
         // update average rating upon successful save
         // Id is always returned
-        _updateAverageRating(pitch._Id); // if successfully saved data
+        _updateAverageRating(pitch._id); // if successfully saved data
         let thisReview = pitch.reviews[pitch.reviews.length - 1]; // retrieve last review and return it as JSON confirmation response - but why let? TODO
         res
           .status(201)
@@ -92,6 +92,7 @@ const _doAddReview = function(req, res, pitch) {
  */
 const reviewsCreate = function(req, res) {
   const pitchId = req.params.pitchId;
+  console.log(pitchId);
   if (pitchId) {
     Pitch
       .findById(pitchId)
@@ -238,7 +239,7 @@ const reviewsUpdateOne = function(req, res) {
                 .status(404)
                 .json(err);
             } else {
-              _updateAverageRating(pitch._Id);
+              _updateAverageRating(pitch._id);
               res
                 .status(200)
                 .json(thisReview);
@@ -304,7 +305,7 @@ const reviewsDeleteOne = function(req, res) {
                 .status(404)
                 .json(err);
             } else {
-              _updateAverageRating(pitch._Id);
+              _updateAverageRating(pitch._id);
               res
                 .status(204)
                 .json(null);

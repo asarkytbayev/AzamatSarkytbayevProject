@@ -14,6 +14,7 @@ Notes:
 * Create service to get the pitch data: ng generate service pitch-data
 * Created service to get user's location: ng generate service geolocation
 * Created a pipe to format the distance
+* Set up details page & configured the add review functionality
 
 # <a name="iter2"></a>Iteration 2: Developing CRUD. GET & POST. Not Broken! Incomplete functionality - only user registration and login/logout functionalities are implemented.
 

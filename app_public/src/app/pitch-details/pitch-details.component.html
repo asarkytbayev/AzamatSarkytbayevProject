@@ -1,3 +1,65 @@
 <p>
   pitch-details works!
 </p>
+<div>
+  <div>Rating: {{ pitch.rating }}</div>
+  <div>Address: {{ pitch.address }}</div>
+  Facilities: 
+  <span *ngFor="let facility of pitch.facilities">
+    {{ facility }}
+  </span>
+  <div>
+    Opening hours
+    <p *ngFor="let time of pitch.openingTimes" [ngSwitch]="time.closed">
+      {{ time.days }}
+      <span *ngSwitchCase="true">closed</span>
+      <span *ngSwitchDefault> {{ time.opening + " - " + time.closing }}</span>
+    </p>
+  </div>
+  <div>
+    Pitch Map
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center={{pitch.coords[1]}},{{pitch.coords[0]}}&zoom=17&size=400x350&sensor=false&markers={{pitch.coords[1]}},{{pitch.coords[0]}}&scale=2&key=AIzaSyCbZyFtbfQoeYLlNcTDZhehFHxx6LoMjYk&scale=2" class="img-fluid rounded"/>
+  </div>
+</div>
+<div>
+  <button (click)="formVisible=true">Add review</button>
+  <h2>Customer reviews</h2>
+  <div *ngIf="formVisible">
+    <form (ngSubmit)="onReviewSubmit()">
+      <h4>Add your review</h4>
+      <div *ngIf="formError">
+        {{ formError }}
+      </div>
+      <div>
+        <label for="name">Name</label>
+        <input [(ngModel)]="newReview.author" name="name" required="required" class="form-control">
+      </div>
+      <div>
+        <label for="rating">Rating</label>
+        <select [(ngModel)]="newReview.rating" name="rating" id="rating">
+          <option [ngValue]="5">5</option>
+          <option [ngValue]="4">4</option>
+          <option [ngValue]="3">3</option>
+          <option [ngValue]="2">2</option>
+          <option [ngValue]="1">1</option>
+        </select>
+      </div>
+      <div>
+        <label for="review">Review</label>
+        <textarea [(ngModel)]="newReview.reviewText" name="review" rows="5" class="form-control"></textarea>
+      </div>
+      <div>
+        <button type="submit">SubmitReview</button>
+        <button type="button" (click)="formVisible=false">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <div>
+      <br><br>Reviews:<br><br>
+  </div>
+  <div *ngFor="let review of pitch.reviews">
+    <p>{{ review.author }}</p>
+    <p>{{ review.createdOn | date: 'MMMM d, yyyy' }}</p>
+    <p>{{ review.reviewText }}</p>
+  </div>
+</div>

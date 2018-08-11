@@ -63,13 +63,14 @@ export class PitchDataService {
   /**
    * Adds review for a pitch
    * 
-   * @param {string} pitchId the pitch id
-   * @param {Review} formData submitted form data
-   * @return {Promise} submitted review as a promise
+   * @param pitchId the pitch id
+   * @param formData submitted form data
+   * @return submitted review as a promise
    */
   public addReviewByPitchId(pitchId: string, formData: Review): Promise<Review> {
     const url: string = `${this.apiBaseUrl}pitches/${pitchId}/reviews`;
-    
+    // console.log(url);
+    // console.log(formData);
     return this.http
       .post(url, formData)
       .toPromise()

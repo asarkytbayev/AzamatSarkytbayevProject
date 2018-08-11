@@ -17,7 +17,7 @@ const auth = jwt({
     secret: process.env.MY_SECRET,
     userProperty: 'payload'
 });
-console.log(process.env.MY_SECRET);
+// console.log(process.env.MY_SECRET);
 
 /**
  * Handles routing for displaying a list of pitches and adding a pitch
@@ -40,7 +40,7 @@ router
  * Handles routing for creating a review
  */
 router
-    .route('/piches/:pitchesId/reviews')
+    .route('/pitches/:pitchId/reviews')
     .post(ctrlReviews.reviewsCreate);
 
 /**
