@@ -59,7 +59,7 @@
     <div>
         <br><br>Reviews:<br><br>
     </div>
-    <div *ngFor="let review of pitch.reviews">
+    <div *ngFor="let review of pitch.reviews | mostRecentFirst">
       <p>{{ review.author }}</p>
       <p>{{ review.createdOn | date: 'MMMM d, yyyy' }}</p>
       <p>{{ review.reviewText }}</p>

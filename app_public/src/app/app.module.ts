@@ -28,6 +28,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { DistancePipe } from './distance.pipe';
+import { MostRecentFirstPipe } from './most-recent-first.pipe';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { DistancePipe } from './distance.pipe';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    DistancePipe
+    DistancePipe,
+    MostRecentFirstPipe
   ],
   imports: [
     BrowserModule,
