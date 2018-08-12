@@ -2,7 +2,7 @@
  * Defines player class
  */
 export class Player {
-    _id: string;
+    // _id: string;
     email: string;
     name: string;
     dob: string;

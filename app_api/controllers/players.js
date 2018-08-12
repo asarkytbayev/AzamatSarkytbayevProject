@@ -9,6 +9,7 @@ const Player = mongoose.model('Player');
  */
 const playersCreate = function(req, res) {
     Player.create({
+        email: req.body.email,
         name: req.body.name,
         dob: req.body.dob,
         height: req.body.height,

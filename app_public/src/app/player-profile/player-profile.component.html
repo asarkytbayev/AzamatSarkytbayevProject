@@ -4,5 +4,8 @@
 <div>
   Email: {{ email }}
 </div>
-<app-player-data  [player]="newPlayer"></app-player-data>
-<!-- *ngIf="newPlayer" -->
+<div>
+    <app-player-data *ngIf="email" [emailAddress]="email" [player]="newPlayer"></app-player-data>
+</div>
+
+<!-- *ngIf="newPlayer" [player]="newPlayer"-->
