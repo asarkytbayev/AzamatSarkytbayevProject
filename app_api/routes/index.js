@@ -53,11 +53,11 @@ router
     .delete(ctrlReviews.reviewsDeleteOne);
 
 /**
- * Handles routing for registering
+ * Handles routing for creating a player
  */
-// router
-//     .route('/register')
-//     .post(ctrlPlayers.playersCreate);
+router
+    .route('/players')
+    .post(ctrlPlayers.playersCreate);
 
 /**
  * Handles routing for reading, updating and deleting a player
@@ -68,12 +68,16 @@ router
     .put(ctrlPlayers.playersUpdateOne)
     .delete(ctrlPlayers.playersDeleteOne);
 
+router
+    .route('/playersEmail/:playerEmail')
+    .get(ctrlPlayers.playersReadByEmail);
+
 /**
  * TODO: Add logic to CRUD a player + authentication
  */
 router
     .route('/register')
-    .post(ctrlAuth.register)
+    .post(ctrlAuth.register);
 
 router
     .route('/login')

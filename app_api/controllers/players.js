@@ -37,7 +37,7 @@ const playersCreate = function(req, res) {
  * @param res HTTP response object
  */
 const playersReadOne = function(req, res) {
-    if (req.params && req.param.playerId) {
+    if (req.params && req.params.playerId) {
         Player
             .findById(req.params.playerId)
             .exec((err, player) => {
@@ -153,9 +153,51 @@ const playersDeleteOne = function(req, res) {
     }
 }
 
+/**
+ * Finds and returns player profile by email
+ * 
+ * @param req HTTP request object
+ * @param res HTTP response object
+ */
+const playersReadByEmail = function(req, res) {
+    // console.log(req.params.playerEmail);
+    // console.log(req.params);
+    // req.param.playerEmail = 'a';
+    if (req.params && req.params.playerEmail) {
+        Player
+            .findOne({ email: req.params.playerEmail })
+            .exec((err, player) => {
+                if (!player) {
+                    res
+                        .status(404)
+                        .json({
+                            "message": "player by email not found"
+                        });
+                    return;
+                } else if (err) {
+                    res
+                        .status(404)
+                        .json(err);
+                    return;
+                }
+                // console.log(player);
+                res
+                    .status(200)
+                    .json(player);
+            });
+    } else {
+        res
+            .status(404)
+            .json({
+                "message" : "no playerEmail in request"
+            });
+    }
+};
+
 module.exports = {
     playersCreate,
     playersReadOne,
     playersUpdateOne,
-    playersDeleteOne
+    playersDeleteOne,
+    playersReadByEmail
 };

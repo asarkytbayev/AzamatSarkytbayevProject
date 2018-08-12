@@ -13,12 +13,6 @@ const register = function(req, res) {
 
     user.name = req.body.name;
     user.email = req.body.email;
-    // user.dob = req.body.dob;
-    // user.height = req.body.height;
-    // user.position = req.body.position;
-    // user.attack = req.body.attack;
-    // user.defense = req.body.defense;
-    // user.passing = req.body.passing;
 
     user.setPassword(req.body.password);
 
