@@ -53,7 +53,7 @@ export class PlayerDataService {
   public getPlayerByEmail(playerEmail: string): Promise<Player> {
     const url: string = `${this.apiBaseUrl}playersEmail/${playerEmail}`;
 
-    console.log(url);
+    // console.log(url);
 
     return this.http
       .get(url)

@@ -13,6 +13,7 @@ import 'rxjs/add/operator/switchMap';
 export class PlayerProfileComponent implements OnInit {
 
   @Input() email: string;
+  @Input() id: string;
 
   /**
    * Injects dependencies
@@ -28,13 +29,16 @@ export class PlayerProfileComponent implements OnInit {
   /** stores return player object */
   public newPlayer: Player;
 
+
   /**
    * Executes on initialization of the component
    */
   ngOnInit(): void {
-    console.log(this.email);
-    if (this.email === '') {
-      console.log("getPlayerById");
+    // console.log(this.email);
+    // console.log(this.id);
+    // check for both null & undefined
+    if (this.id != null) {
+      // console.log("getPlayerById");
       this.route.paramMap
         .switchMap( (params: ParamMap) => {
           let id = params.get('playerId');
@@ -44,13 +48,13 @@ export class PlayerProfileComponent implements OnInit {
           this.newPlayer = newPlayer;
         })
     }
-    else {
-      console.log("getPlayerByEmail", this.email);
+    else if (this.email != null) {
+      // console.log("getPlayerByEmail", this.email);
       this.playerDataService
         .getPlayerByEmail(this.email)
         .then( (newPlayer: Player) => {
           this.newPlayer = newPlayer;
-        })
+        });
     }
   }
 }

@@ -15,7 +15,6 @@ export class PlayerDataComponent implements OnInit {
   constructor(private playerDataService: PlayerDataService) { }
 
   ngOnInit() {
-    console.log(this.player);
   }
 
 }
