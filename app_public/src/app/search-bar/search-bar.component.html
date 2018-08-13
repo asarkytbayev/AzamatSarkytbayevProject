@@ -1,3 +1,7 @@
 <p>
   search-bar works!
 </p>
+<!-- <div>
+    <input type="text" placeholder="Search for location" autocorrect="off" name="" spellcheck="off" #autoSearch/>
+ </div> -->
+ <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>

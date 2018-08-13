@@ -18,7 +18,7 @@ Notes:
 * Added show/hide reviews functionality
 * Added pipe to sort reviews: ng generate pipe most-recent-first
 * Created player class & corresponding service for API requests/reponses: ng generate player-data
-* Started working on logic to create player profiles
+* Started working on logic to create player profiles - implemented
 
 # <a name="iter2"></a>Iteration 2: Developing CRUD. GET & POST. Not Broken! Incomplete functionality - only user registration and login/logout functionalities are implemented.
 

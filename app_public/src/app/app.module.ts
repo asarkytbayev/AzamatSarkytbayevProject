@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+// import {AgmCoreModule}  from '@agm/core' 
 
 /** imports router file */
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -57,7 +59,12 @@ import { MostRecentFirstPipe } from './most-recent-first.pipe';
     HttpModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GooglePlaceModule
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyAfh_6YKXlIe35ujWMKgeaFp0r5FyCyud8',
+    //   libraries: ['places']
+    // }),
   ],
   providers: [
     AuthenticationService,
@@ -65,4 +72,7 @@ import { MostRecentFirstPipe } from './most-recent-first.pipe';
   ],
   bootstrap: [FrameworkComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  
+ }
