@@ -1,5 +1,6 @@
 <p>
   search-bar works!
 </p>
-<input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+<input ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
 <button type="button"><a routerLink="/pitches">Search</a></button>
+<!-- [options]='options' -->
