@@ -13,15 +13,17 @@ export class GeolocationService {
    * @param cbError function to call upon error
    * @param cbNoGeo function to call geolocation is not supported
    */
-  public getPosition(cbSuccess, cbError, cbNoGeo): void {
+  public getPosition(cbSuccess, cbError, cbNoGeo): boolean {
     // if geolocation is supported, call the method
     if (navigator.geolocation) {
       // cbSuccess (position: any) - takes in position object parameter
       // cbError (positionError: any) - takes in position error object as parameter
       navigator.geolocation.getCurrentPosition(cbSuccess, cbError);
+      return true;
     }
     else { // if geolocation is not supported
       cbNoGeo();
+      return false;
     }
   }
 

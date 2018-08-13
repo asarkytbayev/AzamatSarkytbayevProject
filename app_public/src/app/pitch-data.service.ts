@@ -11,7 +11,7 @@ export class PitchDataService {
   /**
    * Injects the dependency
    * 
-   * @param http the Http class 
+   * @param http for http requests
    */
   constructor(private http: Http) { }
 
@@ -34,9 +34,9 @@ export class PitchDataService {
    * @return returns array of pitches as a promise
    */
   public getLocations(lat: number, lng: number) : Promise<Pitch[]> {
-    const maxDistance: number = 63710000;
+    const maxDistance: number = 20000;
     const url: string = `${this.apiBaseUrl}pitches?lng=${lng}&lat=${lat}&maxDistance=${maxDistance}`;
-    console.log(url);
+    // console.log(url);
     return this.http
       .get(url)
       .toPromise()

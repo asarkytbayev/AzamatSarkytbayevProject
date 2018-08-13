@@ -1,9 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { GooglePlaceDirective } from "ngx-google-places-autocomplete";
 import { Address } from "ngx-google-places-autocomplete/objects/address";
-import { Router } from '@angular/router';
-
-
+import { ShareCoordinatesService } from '../share-coordinates.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -12,32 +10,34 @@ import { Router } from '@angular/router';
 })
 export class SearchBarComponent implements OnInit {
 
-  /** redirects to pitches page */
-  // public redirect: boolean;
-
   /** stores coords */
-  public coords: [number];
+  public coords: number[];
 
-  constructor(private router: Router) { }
+  /**
+   * Injects dependencies
+   * 
+   * @param shareCoordinatesService for inserting values from google search
+   */
+  constructor(private shareCoordinatesService: ShareCoordinatesService) {
+  }
 
   ngOnInit() {
   }
+
   @ViewChild("placesRef") placesRef : GooglePlaceDirective;
-    
+  
+  /**
+   * Gets coordinates from entered location and stores them in the
+   * service
+   * 
+   * @param address the address from google search
+   */
   public handleAddressChange(address: Address): void {
-  // Do some stuff
-    // console.log("hello");
-    // console.log(address);
-    // console.log(address.geometry.location.lat());
-    this.coords[0] = address.geometry.location.lng();
-    this.coords[1] = address.geometry.location.lat();
-    // this.redirect = true;
-    // this.router.navigateByUrl('/pitches', { coordinates: this.coords} );
-    // return this.coords;
-  }
+    this.coords = [];
+    this.coords.push(address.geometry.location.lng());
+    this.coords.push(address.geometry.location.lat());
 
-  public redirectTo(route: string, data: number[]): void {
-    this.router.navigateByUrl(`${route}`);
+    this.shareCoordinatesService.redirect = true;
+    this.shareCoordinatesService.coords = this.coords;
   }
-
 }

@@ -26,6 +26,7 @@ export interface TokenPayload {
 @Injectable()
 export class AuthenticationService {
 
+  /** stores the api base url depending on mode: production/development */
   private apiBaseUrl: string = environment.apiUrl;
 
   // private apiBaseUrl = 'http://localhost:3000';
