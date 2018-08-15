@@ -1,68 +1,156 @@
-<p>
-  pitch-details works!
-</p>
-<div>
-  <div>Rating: {{ pitch.rating }}</div>
-  <div>Address: {{ pitch.address }}</div>
-  Facilities: 
-  <span *ngFor="let facility of pitch.facilities">
-    {{ facility }}
-  </span>
-  <div>
-    Opening hours
-    <p *ngFor="let time of pitch.openingTimes" [ngSwitch]="time.closed">
-      {{ time.days }}
-      <span *ngSwitchCase="true">closed</span>
-      <span *ngSwitchDefault> {{ time.opening + " - " + time.closing }}</span>
-    </p>
-  </div>
-  <div>
-    Pitch Map
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center={{pitch.coords[1]}},{{pitch.coords[0]}}&zoom=17&size=400x350&sensor=false&markers={{pitch.coords[1]}},{{pitch.coords[0]}}&scale=2&key=AIzaSyCbZyFtbfQoeYLlNcTDZhehFHxx6LoMjYk&scale=2" class="img-fluid rounded"/>
+<div class="row banner">
+  <div class="col-12">
+    <!-- replaced hard coded text -->
+    <h1>
+      {{ pitch.name }}
+    </h1>
   </div>
 </div>
-<div>
-  <button (click)="showHideReviews()">{{ reviewsStateString}}</button>
-  <div *ngIf="reviewsVisible">
-    <button (click)="formVisible=true">Add review</button>
-    <h2>Customer reviews</h2>
-    <div *ngIf="formVisible">
-      <form (ngSubmit)="onReviewSubmit()">
-        <h4>Add your review</h4>
-        <div *ngIf="formError">
-          {{ formError }}
-        </div>
-        <div>
-          <label for="name">Name</label>
-          <input [(ngModel)]="newReview.author" name="name" required="required" class="form-control">
-        </div>
-        <div>
-          <label for="rating">Rating</label>
-          <select [(ngModel)]="newReview.rating" name="rating" id="rating">
-            <option [ngValue]="5">5</option>
-            <option [ngValue]="4">4</option>
-            <option [ngValue]="3">3</option>
-            <option [ngValue]="2">2</option>
-            <option [ngValue]="1">1</option>
-          </select>
-        </div>
-        <div>
-          <label for="review">Review</label>
-          <textarea [(ngModel)]="newReview.reviewText" name="review" rows="5" class="form-control"></textarea>
-        </div>
-        <div>
-          <button type="submit">SubmitReview</button>
-          <button type="button" (click)="formVisible=false">Cancel</button>
-        </div>
-      </form>
+<div class="row">
+  <div class="col-12 col-md-4">
+    <h4>Rating: {{ pitch.rating }}</h4>
+    <p>{{ pitch.address }}</p>
+    <div class="card card-primary">
+      <div class="card-block">
+        <h2 class="card-title">Opening hours</h2>
+        <p class="card-text" *ngFor="let time of pitch.openingTimes" [ngSwitch]="time.closed">
+          {{ time.days }}
+          <span *ngSwitchCase="true">closed</span>
+          <span *ngSwitchDefault> {{ time.opening + " - " + time.closing }}</span>
+        </p>
+      </div>
     </div>
-    <div>
-        <br><br>Reviews:<br><br>
+    <div class="card card-primary">
+      <div class="card-block">
+        <h2 class="card-title">Facilities</h2>
+        <div class="facilities">
+          <span *ngFor="let facility of pitch.facilities" class="badge badge-primary">
+            {{ facility }}
+          </span>
+        </div>
+      </div>
     </div>
-    <div *ngFor="let review of pitch.reviews | mostRecentFirst">
-      <p>{{ review.author }}</p>
-      <p>{{ review.createdOn | date: 'MMMM d, yyyy' }}</p>
-      <p>{{ review.reviewText }}</p>
+  </div>
+  <div class="col-12 col-md-4 location-map">
+    <div class="card card-primary">
+      <h2 class="card-title">Pitch map</h2>
+      <img src="https://maps.googleapis.com/maps/api/staticmap?center={{pitch.coords[1]}},{{pitch.coords[0]}}&zoom=17&size=400x350&sensor=false&markers={{pitch.coords[1]}},{{pitch.coords[0]}}&scale=2&key=AIzaSyCbZyFtbfQoeYLlNcTDZhehFHxx6LoMjYk&scale=2" class="img-fluid rounded"/>
+    </div>
+  </div>
+  <div class="col-12 col-md-4">
+    <button type="button" class="btn btn-light" (click)="showHideReviews()">{{ reviewsStateString}}</button>
+    <div *ngIf="reviewsVisible">
+      <div class="card card-primary review-card my-reviews">
+        <div class="card-block">
+        <!-- <div *ngIf="reviewsVisible"> -->
+          <button (click)="formVisible=true" class="btn btn-primary float-right">Add review</button>
+          <h2 class="card-title">Customer reviews</h2>
+          <div *ngIf="formVisible">
+            <form (ngSubmit)="onReviewSubmit()">
+              <hr>
+              <h4>Add your review</h4>
+              <div *ngIf="formError" class="alert alert-danger" role="alert">
+                {{ formError }}
+              </div>
+              <div class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label">Name</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="newReview.author" name="name" required="required" class="form-control">
+                </div>
+              </div>
+              <div class="form-group-row">
+                <label for="rating" class="col-sm-6 col-form-label">Rating</label>
+                <div class="col-sm-10">
+                  <select [(ngModel)]="newReview.rating" name="rating" id="rating">
+                    <option [ngValue]="5">5</option>
+                    <option [ngValue]="4">4</option>
+                    <option [ngValue]="3">3</option>
+                    <option [ngValue]="2">2</option>
+                    <option [ngValue]="1">1</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="review" class="col-sm-6 col-form-label">Review</label>
+                <div class="col-sm-10">
+                  <textarea [(ngModel)]="newReview.reviewText" name="review" rows="5" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary float-left">Submit Review</button>
+                  <button type="button" (click)="formVisible=false" class="btn btn-default float-right">Cancel</button>
+                </div>
+              </div>
+              <hr>  
+            </form>
+          </div>
+          <div>
+            <h4>Reviews:</h4>
+          </div>
+          <div>
+            <div *ngFor="let review of pitch.reviews | mostRecentFirst" class="row review">
+              <div class="col-12 no-gutters review-header">
+                <span class="reviewAuthor">{{ review.author }}</span>
+                <small class="reviewTimestamp">{{ review.createdOn | date: 'MMMM d, yyyy' }}</small>
+              </div>
+              <div class="col-12">
+                <p>{{ review.reviewText }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<!-- <div class="row">
+  <div class="col-12">
+    <div class="card card-primary review-card">
+      <div class="card-block">
+        <button (click)="showHideReviews()">{{ reviewsStateString}}</button>
+        <div *ngIf="reviewsVisible">
+        <button (click)="formVisible=true">Add review</button>
+        <h2>Customer reviews</h2>
+        <div *ngIf="formVisible">
+          <form (ngSubmit)="onReviewSubmit()">
+            <h4>Add your review</h4>
+            <div *ngIf="formError">
+              {{ formError }}
+            </div>
+            <div>
+              <label for="name">Name</label>
+              <input [(ngModel)]="newReview.author" name="name" required="required" class="form-control">
+            </div>
+            <div>
+              <label for="rating">Rating</label>
+              <select [(ngModel)]="newReview.rating" name="rating" id="rating">
+                <option [ngValue]="5">5</option>
+                <option [ngValue]="4">4</option>
+                <option [ngValue]="3">3</option>
+                <option [ngValue]="2">2</option>
+                <option [ngValue]="1">1</option>
+              </select>
+            </div>
+            <div>
+              <label for="review">Review</label>
+              <textarea [(ngModel)]="newReview.reviewText" name="review" rows="5" class="form-control"></textarea>
+            </div>
+            <div>
+              <button type="submit">SubmitReview</button>
+              <button type="button" (click)="formVisible=false">Cancel</button>
+            </div>
+          </form>
+        </div>
+        <div>
+            <br><br>Reviews:<br><br>
+        </div>
+        <div *ngFor="let review of pitch.reviews | mostRecentFirst">
+          <p>{{ review.author }}</p>
+          <p>{{ review.createdOn | date: 'MMMM d, yyyy' }}</p>
+          <p>{{ review.reviewText }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

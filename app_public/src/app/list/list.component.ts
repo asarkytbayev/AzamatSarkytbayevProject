@@ -14,7 +14,7 @@ import { ShareCoordinatesService } from '../share-coordinates.service';
 export class ListComponent implements OnInit {
 
   /** array of pitches */
-  public pitches: Pitch[];
+  public pitches: Pitch[] = [];
 
   /** message to display */
   public message: string;
@@ -52,7 +52,13 @@ export class ListComponent implements OnInit {
     this.pitchDataService
       .getLocations(lat, lng)
       .then( (foundPitches) => {
-        this.message = foundPitches.length > 0 ? 'Pitches found!' : 'No pitches found';
+        let n = foundPitches.length;
+        let pitchEs = 'pitches';
+        if (n === 1) {
+          pitchEs = 'pitch';
+        }
+        this.message = foundPitches.length > 0 ? `${foundPitches.length} ${pitchEs} found!` : 'No pitches found';
+        
         this.pitches = foundPitches;
       });
   }

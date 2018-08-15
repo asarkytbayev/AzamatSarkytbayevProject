@@ -1,0 +1,19 @@
+.logout {
+    cursor: pointer;
+}
+
+.my-footer li {
+    display: inline-block;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+  
+.footer-links {
+    cursor: pointer;
+}
+
+.my-navbar {
+    margin-bottom: 0px;
+}

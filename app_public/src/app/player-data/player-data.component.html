@@ -1,51 +1,60 @@
-<p>
-  player-data works!
-</p>
-<div *ngIf="player">
-  Player name: {{ player.name }}<br>
-  Height: {{ player.height }}<br>
-  Position: {{ player.position }}<br>
-  Attack: {{ player.attack }}<br>
-  Defense: {{ player.defense }}<br>
-  Passing: {{ player.passing }}<br>
-</div>
-<div *ngIf="!player">
-  Email again: {{ emailAddress }}
-  <form (ngSubmit)="createProfile()">
-    <h4>Create your player profile</h4>
-    <div *ngIf="formError">
-      {{ formError }}
-    </div>
-    <div>
-      <label for="name">Name</label>
-      <input [(ngModel)]="newPlayer.name" type="text" name="name" required="required" class="form-control">
-    </div>
-    <div>
-      <label for="name">Date of Birth</label>
-      <input [(ngModel)]="newPlayer.dob" type="date" name="bday" required="required" class="form-control">
-    </div>
-    <div>
-      <label for="name">Height</label>
-      <input [(ngModel)]="newPlayer.height" type="number" name="quantity" required="required" class="form-control" value="175">
-    </div>
-    <div>
-      <label for="name">Position</label>
-      <input [(ngModel)]="newPlayer.position" type="text" name="name" required="required" class="form-control">
-    </div>
-    <div>
-      <label for="name">Attack</label>
-      <input [(ngModel)]="newPlayer.attack" type="number" name="quantity" required="required" class="form-control" min="0" max="100">
-    </div>
-    <div>
-      <label for="name">Defense</label>
-      <input [(ngModel)]="newPlayer.defense" type="number" name="quantity" required="required" class="form-control" min="0" max="100">
-    </div>
-    <div>
-      <label for="name">Passing</label>
-      <input [(ngModel)]="newPlayer.passing" type="number" name="quantity" required="required" class="form-control" min="0" max="100">
-    </div>
-    <div>
-      <button type="submit">Submit</button>
-    </div>
-  </form>
+<div class="my-profile">
+  <div *ngIf="player">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item ">Player name: {{ player.name }}</li>
+      <li class="list-group-item">Height: {{ player.height }}</li>
+      <li class="list-group-item">Position: {{ player.position }}</li>
+      <li class="list-group-item">Attack: {{ player.attack }}</li>
+      <li class="list-group-item">Defense: {{ player.defense }}</li>
+      <li class="list-group-item">Passing: {{ player.passing }}</li>
+      <li class="list-group-item"></li>
+    </ul>
+  </div>
+  <!-- <div *ngIf="player">
+    Player name: {{ player.name }}<br>
+    Height: {{ player.height }}<br>
+    Position: {{ player.position }}<br>
+    Attack: {{ player.attack }}<br>
+    Defense: {{ player.defense }}<br>
+    Passing: {{ player.passing }}<br>
+  </div> -->
+  <div *ngIf="!player">
+    <form (ngSubmit)="createProfile()">
+      <h4>Create your player profile</h4>
+      <div *ngIf="formError" class="alert alert-danger" role="alert">
+        {{ formError }}
+      </div>
+      <div>
+        <label for="name">Name</label>
+        <input [(ngModel)]="newPlayer.name" type="text" name="name" required="required" class="form-control">
+      </div>
+      <div>
+        <label for="name">Date of Birth</label>
+        <input [(ngModel)]="newPlayer.dob" type="date" name="bday" required="required" class="form-control">
+      </div>
+      <div>
+        <label for="name">Height</label>
+        <input [(ngModel)]="newPlayer.height" type="number" name="quantity" required="required" class="form-control" value="175">
+      </div>
+      <div>
+        <label for="name">Position</label>
+        <input [(ngModel)]="newPlayer.position" type="text" name="name" required="required" class="form-control">
+      </div>
+      <div>
+        <label for="name">Attack</label>
+        <input [(ngModel)]="newPlayer.attack" type="number" name="quantity" required="required" class="form-control" min="0" max="100">
+      </div>
+      <div>
+        <label for="name">Defense</label>
+        <input [(ngModel)]="newPlayer.defense" type="number" name="quantity" required="required" class="form-control" min="0" max="100">
+      </div>
+      <div>
+        <label for="name">Passing</label>
+        <input [(ngModel)]="newPlayer.passing" type="number" name="quantity" required="required" class="form-control" min="0" max="100">
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
 </div>

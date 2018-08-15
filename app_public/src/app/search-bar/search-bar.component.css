@@ -1,0 +1,15 @@
+.search {
+    color: white;
+    font-size: 18px;
+}
+
+.near-me {
+    color: gold;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.search-bar {
+    padding-top: 5px;
+    margin-left: 5px;
+}

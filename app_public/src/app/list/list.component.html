@@ -1,19 +1,22 @@
-<div class="error">{{ message }}</div>
-<p>
-  list works!
-</p>
-<div>
-</div>
-<div *ngFor="let pitch of pitches">
-  <div>
-    Pitch name:
-    <a routerLink="/pitches/{{pitch._id}}"> {{ pitch.name }}</a>
-    <div>Rating: {{ pitch.rating }}</div>
-    <div>Distance: {{ pitch.distance | distance }}</div>
-    <div>Address: {{ pitch.address }}</div>
-    Facilities: 
-    <span *ngFor="let facility of pitch.facilities">
-      {{ facility }}
-    </span>
+<div class="container">
+  <div *ngIf="this.pitches.length > 0" class="alert alert-success" role="alert">{{ message }}</div>
+  <div *ngIf="this.pitches.length === 0" class="error alert alert-danger" role="alert">{{ message }}</div>
+  <div class="my-list">
+    <div card="card my-card" *ngFor="let pitch of pitches">
+      <div class="card-block my-card">
+        <h4>
+          <a routerLink="/pitches/{{pitch._id}}"> {{ pitch.name }}</a>
+          <span class="badge badge-pill badge-default float-right">{{pitch.distance | distance }}</span>
+          <p>Rating: {{ pitch.rating }}</p>
+        </h4>
+        <p class="address">{{pitch.address}}</p>
+        <div class="facilities">
+          <span *ngFor="let facility of pitch.facilities" class="badge badge-primary">
+            {{ facility }}
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
+  
 </div>

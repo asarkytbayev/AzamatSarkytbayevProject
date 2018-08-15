@@ -1,0 +1,9 @@
+.my-card {
+    background-color:#e3f2fd;
+    padding: 1rem;
+}
+
+.my-list {
+    height: 500px;
+    overflow-y: auto;
+}

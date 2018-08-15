@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
+import { GooglePlaceDirective } from "ngx-google-places-autocomplete";
+import { Address } from "ngx-google-places-autocomplete/objects/address";
 
 @Injectable()
 export class ShareCoordinatesService {
@@ -9,7 +11,7 @@ export class ShareCoordinatesService {
   private _redirect: boolean = false;
 
   /** stores coordinates from search */
-  private _coords: number[];
+  private _coords: number[] = [];
 
   /**
    * Sets redirect
@@ -53,6 +55,22 @@ export class ShareCoordinatesService {
   public reset() {
     this.coords.length = 0;
     this.redirect = false;
+  }
+
+  @ViewChild("placesRef") placesRef : GooglePlaceDirective;
+  /**
+   * Gets coordinates from entered location and stores them in the
+   * service
+   * 
+   * @param address the address from google search
+   */
+  public handleAddressChange(address: Address): void {
+    this.coords.length = 0;
+    this.coords.push(address.geometry.location.lng());
+    this.coords.push(address.geometry.location.lat());
+
+    this.redirect = true;
+    this.coords = this.coords;
   }
   
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
+import { ShareCoordinatesService } from '../share-coordinates.service';
+
 
 @Component({
   selector: 'app-framework',
@@ -8,7 +10,8 @@ import { AuthenticationService } from '../authentication.service';
 })
 export class FrameworkComponent implements OnInit {
 
-  constructor(public auth: AuthenticationService) { }
+  constructor(public auth: AuthenticationService,
+    private shareCoordinatesService: ShareCoordinatesService) { }
 
   ngOnInit() {
   }

@@ -1,6 +1,12 @@
-<p>
-  details-page works!
-</p>
-<app-summary></app-summary>
-<app-pitch-details *ngIf="newPitch" [pitch]="newPitch"></app-pitch-details>
-<app-interested></app-interested>
+<!-- <div class="container"> -->
+<div class="details-page">
+  <div class="row">
+    <div class="col-12">
+      <app-pitch-details *ngIf="newPitch" [pitch]="newPitch">Loading...</app-pitch-details>
+      <app-interested></app-interested>
+    </div>
+  </div>
+</div>
+
+
+<!-- </div> -->

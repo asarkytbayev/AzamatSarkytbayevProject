@@ -1,0 +1,12 @@
+.homepage {
+    display: block;
+    width: 100% ;
+    background-image: url("../../assets/images/f0.jpg");
+    background-size: cover;
+    height: 700px;
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: 100% 100%;
+  }
+
