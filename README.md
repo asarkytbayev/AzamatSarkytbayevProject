@@ -1,6 +1,10 @@
 # AzamatSarkytbayevProject
 Personal project for CS5610 Web Development class
 
+# <a name="future"></a>Future work
+
+
+
 # <a name="iter3"></a>Iteration 3: Application is done!
 
 link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
@@ -21,6 +25,7 @@ Notes:
 * Started working on logic to create player profiles - implemented
 * Added google search box
 * Created data sharing service - to pass coordinates
+* Modified user interface
 
 # <a name="iter2"></a>Iteration 2: Developing CRUD. GET & POST. Not Broken! Incomplete functionality - only user registration and login/logout functionalities are implemented.
 

@@ -1,12 +1,15 @@
 <!-- <div class="container"> -->
-<div class="details-page">
-  <div class="row">
-    <div class="col-12">
-      <app-pitch-details *ngIf="newPitch" [pitch]="newPitch">Loading...</app-pitch-details>
-      <app-interested></app-interested>
+<div class="outer-details">
+  <div class="details-page">
+    <div class="row">
+      <div class="col-12">
+        <app-pitch-details *ngIf="newPitch" [pitch]="newPitch">Loading...</app-pitch-details>
+        <app-interested></app-interested>
+      </div>
     </div>
   </div>
 </div>
+
 
 
 <!-- </div> -->

@@ -1,9 +1,18 @@
-h1 {
+h1, h2, h3, h4 {
     text-align: center;
 }
 
 .my-about {
     margin-left: auto;
     margin-right: auto;
+    background-image: url("../../assets/images/white_field.jpg");
+    background-size: cover;
+    /* height: 700px; */
+    /* height: 110%; */
+    background-size: 100% 100%;
 }
 
+.my-future {
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+}
