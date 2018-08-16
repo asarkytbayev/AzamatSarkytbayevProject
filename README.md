@@ -41,6 +41,7 @@ Notes:
 * Added google search box
 * Created data sharing service - to pass coordinates
 * Modified user interface
+* Populated database with entries
 
 ## <a name="iter2"></a>Iteration 2: Developing CRUD. GET & POST. Not Broken! Incomplete functionality - only user registration and login/logout functionalities are implemented.
 
