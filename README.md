@@ -1,11 +1,26 @@
-# AzamatSarkytbayevProject
-Personal project for CS5610 Web Development class
+# Hoope
+Personal project by Azamat Sarkytbayev for CS5610 Web Development class
 
-# <a name="future"></a>Future work
+link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
 
+Important links:
 
+* [Summary](#summary)
+* [Iteration 3](#iter3)
+* [Iteration 2](#iter2)
+* [Iteration 1](#iter1)
 
-# <a name="iter3"></a>Iteration 3: Application is done!
+## <a name="summary"></a>Summary
+
+* Hoope means "Redwood" in Ohlone language, native to the San Francisco Bay Area. The website is for people interested in football!
+
+* Features: This website allows users to register and create player profiles. They can search for football pitches using Google Maps API, rate them and read reviews. CRUD requests
+
+* Technologies used: HTML, CSS, Javascript, Express, Typescript, Angular, MongoDB, Mongoose.- MEAN stack
+
+* Future work: In the future, this website would add the functionality for people to create events and have people sign up for matches at pitches. Furthermore, users would be able to directly message others, rate them as players and organize into teams. 
+
+## <a name="iter3"></a>Iteration 3: Application is done!
 
 link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
 
@@ -27,7 +42,7 @@ Notes:
 * Created data sharing service - to pass coordinates
 * Modified user interface
 
-# <a name="iter2"></a>Iteration 2: Developing CRUD. GET & POST. Not Broken! Incomplete functionality - only user registration and login/logout functionalities are implemented.
+## <a name="iter2"></a>Iteration 2: Developing CRUD. GET & POST. Not Broken! Incomplete functionality - only user registration and login/logout functionalities are implemented.
 
 link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
 
@@ -57,7 +72,7 @@ Notes:
 ![iter2](/readme_images/iter2_2.jpg)
 ![iter2](/readme_images/iter2_3.jpg)
 
-# <a name="iter1"></a>Iteration 1: Front + Back Ends Working. Angular Components Created. Routing, Links, CRUD Schema Established. 3rd Party Libraries/Boilerplates Selected.
+## <a name="iter1"></a>Iteration 1: Front + Back Ends Working. Angular Components Created. Routing, Links, CRUD Schema Established. 3rd Party Libraries/Boilerplates Selected.
 
 link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
 

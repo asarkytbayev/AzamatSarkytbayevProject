@@ -4,3 +4,7 @@
     /* height: 700px; */
     background-size: 100% 100%;
 }
+
+.name_email {
+    text-decoration: underline;
+}
