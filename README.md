@@ -43,6 +43,17 @@ Notes:
 * Modified user interface
 * Populated database with entries
 
+
+![iter3](/readme_images/final_00_homepage.jpg)
+![iter3](/readme_images/final_01_about.jpg)
+![iter3](/readme_images/final_02_register.jpg)
+![iter3](/readme_images/final_03_register_error.jpg)
+![iter3](/readme_images/final_04_profile.jpg)
+![iter3](/readme_images/final_05_player_profile.jpg)
+![iter3](/readme_images/final_06_login_error.jpg)
+![iter3](/readme_images/final_07_list.jpg)
+![iter3](/readme_images/final_08_pitch_details.jpg)
+
 ## <a name="iter2"></a>Iteration 2: Developing CRUD. GET & POST. Not Broken! Incomplete functionality - only user registration and login/logout functionalities are implemented.
 
 link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
