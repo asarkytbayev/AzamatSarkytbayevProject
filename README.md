@@ -1,7 +1,8 @@
 # Hoope
-Personal project by Azamat Sarkytbayev for CS5610 Web Development class
+Personal project by Azamat Sarkytbayev for CS5610 Web Development class  
 
-link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!
+link to the [Heroku app](https://cryptic-waters-21711.herokuapp.com/)!  
+Note: Mlab extension was removed from Heroku and as a result the app doesn't contain any data.  
 
 Important links:
 
